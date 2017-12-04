@@ -1,0 +1,7 @@
+{
+  "name": "meme-vote",
+  "short_name": "meme-vote",
+  "description": "Vote on memes so we can discover the world&#39;s spiciest meme",
+  "start_url": "/",
+  "display": "standalone"
+}

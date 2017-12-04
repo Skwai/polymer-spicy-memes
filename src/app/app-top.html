@@ -1,0 +1,46 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="./app-meme.html">
+
+<dom-module id="app-top">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Spiciest Memes</h2>
+    <template is="dom-repeat" items="{{top}}">
+      <app-meme meme="{{item}}"></app-meme>
+    </template>
+  </template>
+
+  <script>
+    class AppTop extends Polymer.Element {
+      static get is () { return 'app-top' }
+
+      static get properties() {
+        return {
+          top: {
+            type: Array,
+            value () {
+              return []
+            }
+          }
+        }
+      }
+
+      connectedCallback () {
+        super.connectedCallback()
+        this.getTopMemes()
+      }
+
+      async getTopMemes () {
+        const response = await fetch('../../data/top.json')
+        const data = await response.json()
+        this.top = data
+      }
+    }
+
+    window.customElements.define(AppTop.is, AppTop)
+  </script>
+</dom-module>

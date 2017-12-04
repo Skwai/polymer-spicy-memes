@@ -1,0 +1,42 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">
+
+<dom-module id="app-meme">
+  <template>
+    <style>
+      :host {
+        display: block;
+        line-height: 0;
+        background: #fff;
+        padding: 4px;
+        margin-bottom: 1rem;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      div {
+        background: #fff;
+      }
+    </style>
+    <img src="{{meme.url}}">
+  </template>
+
+  <script>
+    class AppMeme extends Polymer.Element {
+      static get is () { return 'app-meme' }
+
+      static get properties () {
+        return {
+          meme: {
+            type: Object
+          }
+        }
+      }
+    }
+
+    window.customElements.define(AppMeme.is, AppMeme)
+  </script>
+</dom-module>

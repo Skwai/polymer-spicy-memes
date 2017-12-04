@@ -1,0 +1,52 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="./app-header.html">
+<link rel="import" href="./app-top.html">
+
+<dom-module id="app-main">
+  <template>
+    <style>
+      :host {
+        display: grid;
+        grid-template-columns: 1fr 20rem;
+        grid-gap: 1rem;
+        background: #33343B;
+        font: 16px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        color: #fff;
+        min-height: 100vh;
+      }
+
+      main {
+        grid-column: 1 / 2;
+        grid-row: 1;
+        padding: 2rem;
+      }
+
+      aside {
+        grid-column: 2;
+        grid-row: 1;
+        padding: 2rem;
+        background: #EE0D47;
+      }
+    </style>
+    <main>
+      <app-header></app-header>
+      <app-compare></app-compare>
+    </main>
+    <aside>
+      <app-top></app-top>
+    </aside>
+  </template>
+
+  <script>
+    class AppMain extends Polymer.Element {
+      static get is () { return 'app-main' }
+
+      static get properties() {
+        return {
+        }
+      }
+    }
+
+    window.customElements.define(AppMain.is, AppMain)
+  </script>
+</dom-module>
