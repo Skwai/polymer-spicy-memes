@@ -1,7 +1,14 @@
 {
     "extends": "standard",
+    "env": {
+        "browser": true
+    },
     "plugins": [
         "standard",
-        "promise"
-    ]
+        "promise",
+        "html"
+    ],
+    "globals": {
+        "Polymer": true
+    }
 }

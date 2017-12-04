@@ -7,8 +7,16 @@
       :host {
         display: block;
       }
+
+      h3 {
+        text-transform: uppercase;
+      }
+
+      app-meme {
+        margin-bottom: 1rem;
+      }
     </style>
-    <h2>Spiciest Memes</h2>
+    <h3>10 Spiciest Memes</h3>
     <template is="dom-repeat" items="{{top}}">
       <app-meme meme="{{item}}"></app-meme>
     </template>
@@ -18,7 +26,7 @@
     class AppTop extends Polymer.Element {
       static get is () { return 'app-top' }
 
-      static get properties() {
+      static get properties () {
         return {
           top: {
             type: Array,

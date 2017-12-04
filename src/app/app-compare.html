@@ -1,13 +1,47 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
-<link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">
+<link rel="import" href="./app-meme.html">
 
 <dom-module id="app-compare">
   <template>
     <style>
       :host {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      small {
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        flex: 0 0 3rem;
+        display: flex;
+        /* color: #33343B; */
+        background: #EE0D47;
+        color: #fff;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 0 -1.5rem;
+        position: relative;
+        z-index: 2;
+        border: #212124 solid 4px;
+      }
+
+      app-meme {
+        max-width: 20vw;
+        background: #212124;
+        cursor: pointer;
+      }
+
+      app-meme:hover {
+        background: #EE0D47;
       }
     </style>
-
+    <app-meme meme="{{a}}" on-click="vote"></app-meme>
+    <small>vs</small>
+    <app-meme meme="{{b}}" on-click="vote"></app-meme>
   </template>
 
   <script>
@@ -25,13 +59,19 @@
         }
       }
 
-      connectedCallback () {
-
+      vote (ev) {
+        console.log(ev)
       }
 
-      async getRandomMemes () {
+      connectedCallback () {
+        super.connectedCallback()
+        this.getMemes()
+      }
+
+      async getMemes () {
         const response = await fetch('../../data/compare.json')
-        const data = await response.json()
+        const [a, b] = await response.json()
+        Object.assign(this, { a, b })
       }
     }
 
