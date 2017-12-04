@@ -1,6 +1,6 @@
 {
   "name": "meme-vote",
-  "description": "Vote on memes so we can discover the world&#39;s spiciest meme",
+  "description": "Vote on memes so we can discover the world's spiciest meme",
   "main": "index.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0"

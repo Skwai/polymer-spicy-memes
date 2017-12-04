@@ -1,0 +1,27 @@
+{
+  "name": "meme-vote",
+  "version": "1.0.0",
+  "description": "Vote on memes so we can discover the world's spiciest meme",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Skwai/polymer-spicy-memes.git"
+  },
+  "keywords": [
+    "polymer",
+    "meme",
+    "vote"
+  ],
+  "author": "Cameron Jensen <me@skwai.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Skwai/polymer-spicy-memes/issues"
+  },
+  "homepage": "https://github.com/Skwai/polymer-spicy-memes#readme",
+  "devDependencies": {
+    "eslint": "^4.12.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}

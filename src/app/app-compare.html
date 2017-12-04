@@ -1,0 +1,40 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">
+
+<dom-module id="app-compare">
+  <template>
+    <style>
+      :host {
+      }
+    </style>
+
+  </template>
+
+  <script>
+    class AppCompare extends Polymer.Element {
+      static get is () { return 'app-compare' }
+
+      static get properties () {
+        return {
+          a: {
+            type: Object
+          },
+          b: {
+            type: Object
+          }
+        }
+      }
+
+      connectedCallback () {
+
+      }
+
+      async getRandomMemes () {
+        const response = await fetch('../../data/compare.json')
+        const data = await response.json()
+      }
+    }
+
+    window.customElements.define(AppCompare.is, AppCompare)
+  </script>
+</dom-module>
